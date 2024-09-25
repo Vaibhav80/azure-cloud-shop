@@ -22,7 +22,11 @@
     "cloudfront:build:deploy:nc": "npm run client:build:deploy:nc && npm run cloudfront:invalidateCache",
     "cloudfront:update:build:deploy": "npm run cloudfront:setup && npm run cloudfront:build:deploy",
     "cloudfront:update:build:deploy:nc": "npm run cloudfront:setup && npm run cloudfront:build:deploy:nc",
-    "serverless:remove": "sls remove"
+    "serverless:remove": "sls remove",
+    "terraform:init": "cd terraform && terraform init",
+    "terraform:apply": "cd terraform && terraform apply",
+    "azure:build:deploy": "npm run build && npm run terraform:init && npm run terraform:apply"
+
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
